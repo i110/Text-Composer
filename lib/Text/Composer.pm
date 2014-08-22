@@ -179,9 +179,11 @@ Compose rext using a template and parameters.
 =over
 
 =item * C<$template>
+
 Parameterized text. Required.
 
 =item * C<\%params>
+
 Parameters which will be rendered in the template.
 Hash's values must be a scalar or coderef, otherwise it will throw an exception.
 Coderef takes two arguments, Text::Composer instance itself and the accessing key.
