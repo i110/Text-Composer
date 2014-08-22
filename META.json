@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Handy Text Builder with Parameters and Logics",
    "author" : [
       "Ichito Nagata <i.nagata110@gmail.com>"
    ],
@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/i110/perl-text-composer/issues"
+      },
+      "homepage" : "https://github.com/i110/perl-text-composer",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/i110/perl-text-composer.git",
+         "web" : "https://github.com/i110/perl-text-composer"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:ILLO"
 }
