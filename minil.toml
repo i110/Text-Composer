@@ -1,0 +1,6 @@
+name = "Text-Composer"
+# badges = ["travis"]
+authority="cpan:ILLO"
+
+module_maker="ModuleBuildTiny"
+
