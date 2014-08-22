@@ -54,13 +54,13 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/i110/perl-text-composer/issues"
+         "web" : "https://github.com/i110/Text-Composer/issues"
       },
-      "homepage" : "https://github.com/i110/perl-text-composer",
+      "homepage" : "https://github.com/i110/Text-Composer",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/i110/perl-text-composer.git",
-         "web" : "https://github.com/i110/perl-text-composer"
+         "url" : "git://github.com/i110/Text-Composer.git",
+         "web" : "https://github.com/i110/Text-Composer"
       }
    },
    "version" : "0.01",

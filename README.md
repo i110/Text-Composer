@@ -57,11 +57,14 @@ Text::Composer - Handy Text Builder with Parameters and Logics
     Compose rext using a template and parameters.
 
     - `$template`
-    Parameterized text. Required.
+
+        Parameterized text. Required.
+
     - `\%params`
-    Parameters which will be rendered in the template.
-    Hash's values must be a scalar or coderef, otherwise it will throw an exception.
-    Coderef takes two arguments, Text::Composer instance itself and the accessing key.
+
+        Parameters which will be rendered in the template.
+        Hash's values must be a scalar or coderef, otherwise it will throw an exception.
+        Coderef takes two arguments, Text::Composer instance itself and the accessing key.
 
 # LICENSE
 
