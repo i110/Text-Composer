@@ -78,7 +78,7 @@ sub compose {
     !
         my $key = $1;
         $key =~ s/\A\s*(.*?)\s*\z/$1/g;
-        my $param = $params->{$key} || '';
+        my $param = (ref($params) eq 'CODE' ? $params->($self, $key) : $params->{$key}) || '';
 
         while (ref($param)) {
             croak 'parameter must be a scalar or coderef' unless ref($param) eq 'CODE';
@@ -172,7 +172,7 @@ Delimiters for parameters. Defaults are '{{' and '}}', respectively.
 
 =back
 
-=item B<compose ( $template, \%params )>
+=item B<compose ( $template, $params )>
 
 Compose rext using a template and parameters.
 
@@ -182,11 +182,13 @@ Compose rext using a template and parameters.
 
 Parameterized text. Required.
 
-=item * C<\%params>
+=item * C<$params>
 
 Parameters which will be rendered in the template.
-Hash's values must be a scalar or coderef, otherwise it will throw an exception.
-Coderef takes two arguments, Text::Composer instance itself and the accessing key.
+This must be a hashref or coderef, otherwise it will throw an exception.
+And also, hash's values must be a scalar or coderef, otherwise it will throw an exception.
+Both of these coderefs take the same two arguments, Text::Composer instance itself and the accessing key, and should return a scalar or coderef.
+If the return value is a coderef, it will be called again (and repeat this process until you get a scalar value).
 
 =back
 

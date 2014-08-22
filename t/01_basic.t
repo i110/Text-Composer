@@ -28,6 +28,15 @@ subtest 'Code Reference Parameter' => sub {
     test_composer('{{code2}}',  'CODE2(CODE1(code1))');
 };
 
+subtest 'Code Reference Parameters' => sub {
+    test_composer('{{code1}}',  'CODE1(code1)');
+    test_composer('{{code2}}',  'CODE2(CODE1(code1))');
+	is(compose_text('{{code3}}', sub {
+		my ($composer, $key) = @_;
+		uc($key);
+	}), 'CODE3');
+};
+
 subtest 'Recursively' => sub {
     test_composer('{{foo}}',  'FOO(HOGE)');
     test_composer('{{hoge}} {{fuga}} {{foo}} {{bar}}',  'HOGE FUGA FOO(HOGE) BAR(FOO(HOGE))');

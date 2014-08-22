@@ -52,7 +52,7 @@ Text::Composer - Handy Text Builder with Parameters and Logics
     - `$end_symbol`
 
         Delimiters for parameters. Defaults are '{{' and '}}', respectively.
-- __compose ( $template, \\%params )__
+- __compose ( $template, $params )__
 
     Compose rext using a template and parameters.
 
@@ -60,11 +60,13 @@ Text::Composer - Handy Text Builder with Parameters and Logics
 
         Parameterized text. Required.
 
-    - `\%params`
+    - `$params`
 
         Parameters which will be rendered in the template.
-        Hash's values must be a scalar or coderef, otherwise it will throw an exception.
-        Coderef takes two arguments, Text::Composer instance itself and the accessing key.
+        This must be a hashref or coderef, otherwise it will throw an exception.
+        And also, hash's values must be a scalar or coderef, otherwise it will throw an exception.
+        Both of these coderefs take the same two arguments, Text::Composer instance itself and the accessing key, and should return a scalar or coderef.
+        If the return value is a coderef, it will be called again (and repeat this process until you get a scalar value).
 
 # LICENSE
 
